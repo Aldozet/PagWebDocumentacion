@@ -1,0 +1,33 @@
+body {
+    margin: 0px;
+    /*display:flex ;
+    /*flex-direction: column;
+    flex-wrap: nowrap; lo sustituimos con flex-wrap*/
+    /*flex-flow: wrap column;
+    justify-content:center;
+    align-items: stretch;
+    align-content: stretch;*/
+
+}
+
+
+#cabecera{
+    display: flex;
+        height: 100px;
+        width: auto;
+        flex-flow: row wrap;
+        justify-content: flex-end;
+        align-items: center;
+        align-content: space-around;
+        background-color: #1cbbeb98;
+        color: #ffffffde;
+        padding-bottom: 5px;
+}
+#logo {
+    /*border-style:dashed;*/
+    /*border-color: azure;*/
+    height: 110px;
+    left: 200px;
+    color: aliceblue;
+
+}

@@ -12,7 +12,7 @@ body {
 
 
 #cabecera{
-    display: flex;
+    display:flex;
         height: 100px;
         width: auto;
         flex-flow: row wrap;
@@ -59,7 +59,7 @@ body {
 
 #barraNav>section {
     display: flex;
-    box-flex: row wrap;
+    flex-flow: row wrap-reverse;
     align-items: center;
     justify-content: center;
     width: 200em;
@@ -98,7 +98,7 @@ footer {
 
 
 iframe {
-    height: 500px;
+    height: 710px;
     width: 100%;
     border: none;
 }

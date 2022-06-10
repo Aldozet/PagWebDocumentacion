@@ -19,9 +19,12 @@ body {
         justify-content: space-around;
         align-items: center;
         align-content: flex-start;
-        background-color: #1cbbeb98;
+        background-color: #23eb1c98;
         color: #ffffffde;
         padding-bottom: 5px;
+        margin-top: 1em;
+        margin-left: 1em;
+        margin-right: 1em;
 }
 .logo {
     /*border-style:dashed;*/
@@ -45,8 +48,9 @@ body {
     justify-content: flex-end;
     align-items: center;
     align-content: space-around;
-    background-color: #1cbbeb98;
-
+    background-color: #23eb1c98;
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
 #barraNav>section {
@@ -67,5 +71,5 @@ body {
     padding: 4px;
     padding-left: 2em;
     padding-right: 1em;
-
+    font-size:18px;
 }

@@ -70,7 +70,36 @@
 
         <section id="CU">
             <div>
-                
+                <pre>
+                Nombre: Registrar producto
+                Identificador: CU-01
+                Descripción:
+                Registrar un producto que no esté previamente registrado.
+                Condiciones previas:
+                Que el producto no esté registrado previamente.
+                Condiciones posteriores:
+                El producto quedará registrado en la base de datos.
+
+                Curso básico de acción:
+                    El caso de uso comienza cuando el usuario quiere registrar un producto.
+                    El usuario ingresará los datos del producto a través de la pantalla de registro de producto PP03.
+                    El sistema verificará que los valores ingresados sean válidos conforme a las restricciones del sistema. [Curso
+                    alternativo A]
+                    El sistema muestra la ventana emergente EP03 con el resumen de los datos ingresados y un mensaje confirmando el correcto
+                    registro del producto o de duplicidad en los productos.[Curso alternativo B]
+
+                Curso alterno A
+
+                    A3. El sistema determina un dato invalido en uno o más de los campos del producto a registrar.
+                    A4. El sistema marca en rojo el recuadro del dato invalido y en la parte delantera del recuadro muestra la leyenda “Dato
+                    no válido”.
+                    A5. El caso de uso continúa en el paso 4.
+
+                Curso alterno B
+
+                    A4. El sistema detecta duplicidad con un producto ya previamente registrado.
+                    A5. El caso de uso termina.
+                </pre>
             </div>
             <div>
                 <pre>
@@ -86,20 +115,20 @@
                     Curso básico de acción:
                         1. El caso de uso comienza cuando el usuario quiere eliminar un producto.
                         2. El usuario buscará el producto que desea eliminar y selecciona la opción de eliminar en dicho producto.
-                        3. El usuario confirmará a través de la pantalla de confirmación PP04 la eliminación del producto.
-                        4. El sistema verifica que el producto cumpla con la regla de negocio RG04. [Curso alterno A]
+                        3. El usuario confirmará a través de la <strong> pantalla de confirmación PP04 la eliminación del producto</strong>.
+                        4. El sistema verifica que el producto cumpla con la regla de negocio RG04. <strong>[Curso alterno A]</strong>
                         5. El sistema elimina el producto.
                         6. El sistema muestra en la ventana emergente EP05 un mensaje informando de la eliminación del producto.
 
                     Curso alterno A
 
-                        A3. El sistema determina que no se cumple la regla de negocio RG04.
+                        A3. El sistema determina que no se cumple la <strong>regla de negocio RG04.</strong>
                         A4. El sistema no permite la eliminación del producto.
                         A5. El sistema notifica que el producto no ha podido ser eliminado.
                         A6. El caso de uso termina.
                 </pre>
-                <img src="../imagenes/Diapositiva2.PNG">
-
+                    <img  src="../imagenes/Diapositiva4.PNG">
+                
             </div>
             <div>
 

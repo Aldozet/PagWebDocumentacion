@@ -32,8 +32,30 @@ body:hover::-webkit-scrollbar {
     border: 3px solid white;
     border-radius: 20px;
     margin-top: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     color: rgb(2, 48, 16);
+    font-size: 20px;
 }
+
+#CU{
+
+        margin-top: 1em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: rgb(2, 48, 16);
+        font-size: 18px;
+}
+
+#CU>div{
+        border: 3px solid white;
+        border-radius: 20px;
+        margin-top: 1em;
+        margin-left: 1em;
+        margin-right: 1em;
+}
+

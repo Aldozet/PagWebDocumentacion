@@ -19,7 +19,7 @@
     </nav>
     <main>
 
-        <section id="x">
+        <section id="RFRNF">
             <div>
                 <ol>
                     <abbr title="Requerimientos funcionales">RF</abbr>
@@ -66,6 +66,53 @@
                 </ol>
             </div>
 
+        </section>
+
+        <section id="CU">
+            <div>
+                
+            </div>
+            <div>
+                <pre>
+                    Nombre: Eliminar producto
+                    Identificador: CU-03
+                    Descripción:
+                    Eliminar un producto que esté previamente registrado.
+                    Condiciones previas:
+                    Que el producto esté registrado previamente.
+                    Condiciones posteriores:
+                    El producto quedará eliminado en la base de datos.
+
+                    Curso básico de acción:
+                        1. El caso de uso comienza cuando el usuario quiere eliminar un producto.
+                        2. El usuario buscará el producto que desea eliminar y selecciona la opción de eliminar en dicho producto.
+                        3. El usuario confirmará a través de la pantalla de confirmación PP04 la eliminación del producto.
+                        4. El sistema verifica que el producto cumpla con la regla de negocio RG04. [Curso alterno A]
+                        5. El sistema elimina el producto.
+                        6. El sistema muestra en la ventana emergente EP05 un mensaje informando de la eliminación del producto.
+
+                    Curso alterno A
+
+                        A3. El sistema determina que no se cumple la regla de negocio RG04.
+                        A4. El sistema no permite la eliminación del producto.
+                        A5. El sistema notifica que el producto no ha podido ser eliminado.
+                        A6. El caso de uso termina.
+                </pre>
+                <img src="../imagenes/Diapositiva2.PNG">
+
+            </div>
+            <div>
+
+            </div>
+            <div>
+
+            </div>
+            <div>
+
+            </div>
+            <div>
+
+            </div>
         </section>
     </main>
 </body>

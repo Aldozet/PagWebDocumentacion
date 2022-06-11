@@ -97,8 +97,8 @@
 
                 Curso alterno B
 
-                    A4. El sistema detecta duplicidad con un producto ya previamente registrado.
-                    A5. El caso de uso termina.
+                    B4. El sistema detecta duplicidad con un producto ya previamente registrado.
+                    B5. El caso de uso termina.
                     
                 </pre>
                 <img id="registro de producto" src="../imagenes/Diapositiva2.PNG">
@@ -130,19 +130,131 @@
                         A5. El sistema notifica que el producto no ha podido ser eliminado.
                         A6. El caso de uso termina.
                 </pre>
+                    <img id="eliminacion exitosa" src="../imagenes/Diapositiva5.PNG">
                     <img id="ventana de confirmacion" src="../imagenes/Diapositiva4.PNG">
                 
             </div>
             <div>
+                <pre>
+                    Nombre: Modificar producto
+                    Identificador: CU-02
+                    Descripción:
+                    Modificar un producto que esté previamente registrado.
+                    Condiciones previas:
+                    Que el producto esté registrado previamente.
+                    Condiciones posteriores:
+                    El producto quedará registrado con las modificaciones en la base de datos.
+
+                    Curso básico de acción:
+
+                        1. El caso de uso comienza cuando el usuario quiere modificar un producto.
+                        2. El usuario buscará el producto que desea modificar y selecciona la opción de modificar en dicho producto.
+                        3. El usuario ingresará los datos del producto a través de la <strong> pantalla de registro de producto PP03</strong>.
+                        4. El sistema verificará que los valores ingresados sean válidos conforme a las restricciones del sistema. <strong>[Curso
+                        alternativo A]</strong>
+                        5. El sistema muestra la ventana emergente EP03 con el resumen de los datos ingresados y un mensaje confirmando el correcto
+                        registro del producto .
+                        6. El sistema con la bandera de modificación activa, elimina el producto inicial y lo reemplaza con el nuevo.
+
+                    Curso alterno A
+
+                        A3. El sistema determina un dato invalido en uno o más de los campos del producto a registrar.
+                        A4. El sistema marca en rojo el recuadro del dato invalido y en la parte delantera del recuadro muestra la leyenda “Dato
+                        no válido”.
+                        A5. El caso de uso continúa en el paso 4.
+                        
+                </pre>
+                <img id="registro de producto" src="../imagenes/Diapositiva2.PNG">
 
             </div>
             <div>
+                <pre>
+                    Nombre: Registrar Usuario
+                    Identificador: CU-08
+                    Descripción:
+                    Registrar un usuario.
+                    Condiciones previas:
+                    Que el usuario no esté registrado previamente.
+                    Condiciones posteriores:
+                    El Usuario quedará registrado en la base de datos.
+
+                    Curso básico de acción:
+
+                        1. El caso de uso comienza cuando el administrador quiere registrar un usuario.
+                        2. El administrador ingresará los datos del usuario a través de la <strong> pantalla de registro de usuario PP08.</strong>
+                        3. El sistema verificará que los valores ingresados sean válidos conforme a las restricciones del sistema. <strong>[Curso
+                        alternativo A]</strong>
+                        4. El sistema muestra la ventana emergente EP08 con el resumen de los datos ingresados y un mensaje confirmando el correcto
+                        registro del usuario o de duplicidad en los usuarios.<strong>[Curso alternativo B]</strong>
+
+                    Curso alterno A
+
+                        A3. El sistema determina un dato invalido en uno o más de los campos del usuario a registrar.
+                        A4. El sistema marca en rojo el recuadro del dato invalido y en la parte delantera del recuadro muestra la leyenda “Dato
+                        no válido”.
+                        A5. El caso de uso continúa en el paso 4.
+
+                    Curso alterno B
+
+                        B4.El sistema detecta duplicidad con un usuario ya previamente registrado.
+                        B5. El caso de uso termina.
+
+
+                </pre>
+                <img id="registro de usuario" src="../imagenes/Diapositiva6.PNG">
 
             </div>
             <div>
+                <pre>
+                    Nombre: Eliminar usuario
+                    Identificador: CU-09
+                    Descripción:
+                    Eliminar un usuario que esté previamente registrado.
+                    Condiciones previas:
+                    Que el usuario esté registrado previamente.
+                    Condiciones posteriores:
+                    El producto quedará usuario en la base de datos.
+
+                        Curso básico de acción:
+
+                        1. El caso de uso comienza cuando el Administrador quiere eliminar un usuario.
+                        2. El administrador buscará el usuario que desea eliminar y selecciona la opción de eliminar en dicho usuario.
+                        3. El administrador confirmará a través de la pantalla de confirmación PP04 la eliminación del usuario.
+                        4. El sistema elimina el usuario.
+                        5. El sistema muestra en la ventana emergente EP09 un mensaje informando de la eliminación del usuario.
+
+
+                </pre>
 
             </div>
             <div>
+                <pre>
+                    Nombre: Inicio de sesion de usuario
+                    Identificador: CU-15
+                    Descripción:
+                    Ingreso de un usuario registrado al sistema.
+                    Condiciones previas:
+                    Que el usuario esté registrado previamente.
+                    Condiciones posteriores:
+                    El usuario tendrá acceso al sistema.
+
+                    Curso básico de acción:
+
+                        1. El caso de uso comienza cuando el usuario quiere acceder al sistema.
+                        2. El usuario ingresara a la pantalla de inicio de sesión PP15.
+                        3. El usuario ingresa sus datos de inicio de sesión en la pantalla de inicio de sesión PP15.
+                        4. El sistema verifica que los datos de inicio de sesión sean correctos.[Curso alterno A]
+                        5. El sistema da acceso al sistema al usuarios solicitante.
+                    
+                    Curso alterno A
+
+                        A3. El sistema determina que no son correctos los datos de inicio de sesión.
+                        A4. El sistema no permite el acceso.
+                        A5. El sistema notifica que uno o más de los datos ingresados, son erróneos.
+                        A6. El caso continúa en el paso 3.
+
+
+                </pre>
 
             </div>
         </section>

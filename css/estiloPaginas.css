@@ -28,3 +28,12 @@ body:hover::-webkit-scrollbar {
     margin-left: 7em;
 
 }
+#RFRNF{
+    border: 3px solid white;
+    border-radius: 20px;
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgb(2, 48, 16);
+}

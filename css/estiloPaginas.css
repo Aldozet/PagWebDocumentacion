@@ -28,6 +28,17 @@ body:hover::-webkit-scrollbar {
     margin-left: 7em;
 
 }
+
+#Arqui1{
+        margin-top: 2em;
+        margin-left: 7em;
+}
+
+#Arqui2{
+    margin-top: 2em;
+    margin-left: 7em;
+}
+
 #RFRNF{
     border: 3px solid white;
     border-radius: 20px;

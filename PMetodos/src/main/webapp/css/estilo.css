@@ -1,0 +1,104 @@
+body {
+    margin: 0px;
+    /*display:flex ;
+    /*flex-direction: column;
+    flex-wrap: nowrap; lo sustituimos con flex-wrap*/
+    /*flex-flow: wrap column;
+    justify-content:center;
+    align-items: stretch;
+    align-content: stretch;*/
+    background-image:url("../imagenes/26-ERGONOMIA-CONVENCIONAL-2-scaled-2194x1097.jpg");
+}
+
+
+#cabecera{
+    display:flex;
+        height: 100px;
+        width: auto;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-items: center;
+        align-content: flex-start;
+        background-color: #009159df;
+        color: #f7f7f7ee;
+        padding-bottom: 5px;
+        margin-top: 1em;
+        margin-left: 1em;
+        margin-right: 1em;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px ;
+}
+.logo {
+    /*border-style:dashed;*/
+    /*border-color: azure;*/
+    height: 100px;
+    left: 200px;
+    color: aliceblue;
+    margin-left: 5em;
+    margin-right: 5em;
+}
+
+#TituloPagina{
+    font-size:40px;
+}
+
+#barraNav {
+    display: flex;
+    height: 70px;
+    width: auto;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: space-around;
+    background-color: #21e398cb;
+    margin-left: 1em;
+    margin-right: 1em;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#barraNav>section {
+    display: flex;
+    flex-flow: row wrap-reverse;
+    align-items: center;
+    justify-content: center;
+    width: 200em;
+    padding: 7px;
+    margin-left: 2em;
+    margin-right: 2em;
+    border-top: #ffffff80 solid 1px;
+}
+
+#barraNav a {
+    color: #043008ee;
+    text-decoration: none;
+    padding: 4px;
+    padding-left: 2em;
+    padding-right: 1em;
+    font-size:18px;
+}
+
+footer {
+    display: flex;
+    align-items: flex-start;
+    padding-left: 1em;
+    background-color: #00663fdf;
+    color: #000000;
+    margin: 1em;
+    border-radius: 20px;
+}
+
+#contenido{
+    width: 98%;
+    background-color: #84e9c2cb;
+    margin: 1em;
+    border-radius: 20px;
+    
+}
+
+
+iframe {
+    height: 710px;
+    width: 100%;
+    border: none;
+}

@@ -1,0 +1,81 @@
+#contenidoInicio {
+    width: 99%;
+    height: 500px;
+    display: flex;
+    color: #000000;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body:hover::-webkit-scrollbar {
+    display: initial;
+}
+
+#Saludo{
+
+    font-size: 60px;
+
+}
+
+#Pro1{
+    margin-top: 2em;
+    margin-left: 7em;
+
+}
+
+#Arqui1{
+        margin-top: 2em;
+        margin-left: 7em;
+}
+
+#Arqui2{
+    margin-top: 2em;
+    margin-left: 7em;
+}
+
+#RFRNF{
+    border: 3px solid white;
+    border-radius: 20px;
+    margin-top: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgb(2, 48, 16);
+    font-size: 20px;
+}
+
+#CU{
+
+        margin-top: 1em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: rgb(2, 48, 16);
+        font-size: 18px;
+}
+
+#CU>div{
+        border: 3px solid white;
+        border-radius: 20px;
+        margin-top: 1em;
+        margin-left: 1em;
+        margin-right: 1em;
+}
+
+img{
+    display: block;
+    margin: 0px auto;
+}
+
+#TituloPagina {
+    font-size: 40px;
+    text-align: center;
+}

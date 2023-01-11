@@ -10,6 +10,11 @@ body {
     background-image:url("../imagenes/decisiones.jpg");
 }
 
+#myCanvas {
+    margin: 20px;
+    border: 1px solid #c3c3c3;
+  }
+
 
 #cabecera{
     display:flex;

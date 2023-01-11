@@ -13,7 +13,7 @@
     <body>
         <div id="main">
             <div id="navigation">
-                <h1 id="h1Title">Graph  Project</h1>
+                <h1 id="h1Title">Arbol Minimo</h1>
     
                 <div id="divMenu">
                    
@@ -32,16 +32,7 @@
                     </select>
     
                     <a href="#" id="executeAlgorithm" class="Run-Item">Execute</a>
-                    <a href="#" id="resetGraph" class="Run-Item">Reinitialise</a>
-                    <p class="made">Made in <img src="icons8-javascript.gif" alt="javascript-icon" class="js-icon"> </p>
-                    <div id="author"> 
-                           by<br>
-                    </div>
-                    <a href="https://www.linkedin.com/in/jules-clinton-saah-nembot-a48354193/" target="_blank"
-                    class="name">  Nembot Jules </a>
-                    <p class="copyright"> 2022, All right reserved</p>
-    
-                   
+                    <a href="#" id="resetGraph" class="Run-Item">Reinitialise</a>                   
                 </div>
             </div>
         </div>

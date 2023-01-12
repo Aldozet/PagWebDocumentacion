@@ -10,9 +10,10 @@ let fromx, fromy;
 let tox, toy
 let countVertex = 1; 
 let counterIdVertexes = 1; 
-let graph = null; 
+let graph = null;
 let canvasMinX; 
 let canvasMinY; 
+let context;
 
 class Vertex {
     constructor(value, posX, posY) {
@@ -54,14 +55,14 @@ class Graph {
             }
 
             return null; 
-        }
+        };
 
         this.addDirectedEdgeByValue = function (initialValue, finalValue, value) {
             var initialVertex = this.searchByValue(initialValue); 
             var finalVertex = this.searchByValue(finalValue); 
 
-            if(initialVertex == null || finalVertex == null) {
-                alert("Ces sommets n'existent pas");
+            if(initialVertex === null || finalVertex === null) {
+                alert("No existe este vertice");
                 return; 
             }
 
@@ -71,7 +72,7 @@ class Graph {
 
         this.removeVertex = function(idVertex) {
             for(var i in this.vertices) {
-                if(idVertex == this.vertices[i].id) {
+                if(idVertex === this.vertices[i].id) {
                     this.vertices.splice(i, 1); 
                     this.removeDirectedEdges(idVertex); 
                     break; 
@@ -81,14 +82,14 @@ class Graph {
 
         this.removeDirectedEdges = function(idVertex) {
             for(var i = 0; i< this.directedEdges.length; i++) {
-                if(idVertex == this.directedEdges[i].start.id) {
+                if(idVertex === this.directedEdges[i].start.id) {
                         this.directedEdges.splice(i, 1); 
                         i = 0; 
                 }
             }
 
             for(var i = 0; i<this.directedEdges.length; i++ ) {
-                if(idVertex == this.directedEdges[i].end.id) {
+                if(idVertex === this.directedEdges[i].end.id) {
                     this.directedEdges.splice(i,1); 
                     i = 0; 
                 }
@@ -97,10 +98,10 @@ class Graph {
 
         this.removeDirectedEdge = function(directedEdge) {
             for(var i in this.directedEdges) {
-                if(directedEdge == this.directedEdges[i]) {
+                if(directedEdge === this.directedEdges[i]) {
                     this.directedEdges.splice(i, 1); 
                    let inversedEdge = this.searchDirectedEdge(directedEdge.end, directedEdge.start); 
-                    if(inversedEdge != null) 
+                    if(inversedEdge !== null) 
                         this.removeDirectedEdge(inversedEdge);
                     break; 
                     
@@ -113,8 +114,8 @@ class Graph {
             let initial = this.search(initialVertexId); 
             let final = this.search(finalVertexId); 
 
-            if(initial == null || final == null) {
-                alert('Sommet(s) non existant(s)'); 
+            if(initial === null || final === null) {
+                alert('Vertices no existen'); 
                 return; 
             }
 
@@ -134,7 +135,7 @@ class Graph {
 
         this.search = function(idVertex) {
             for (var i in this.vertices) {
-                if(idVertex == this.vertices[i].id){
+                if(idVertex === this.vertices[i].id){
                   return   this.vertices[i]
                 }
             }
@@ -143,7 +144,7 @@ class Graph {
 
         this.searchByValue = function(vertexValue) {
             for(var i in this.vertices) {
-                if(vertexValue == this.vertices[i].value) {
+                if(vertexValue === this.vertices[i].value) {
                     return this.vertices[i];
                 }
             }
@@ -152,7 +153,7 @@ class Graph {
 
         this.searchDirectedEdge = function(initialVertex, finalVertex) {
             for(var i = 0; i < this.directedEdges.length; i++) {
-                if(this.directedEdges[i].start == initialVertex && this.directedEdges[i].end == finalVertex) {
+                if(this.directedEdges[i].start === initialVertex && this.directedEdges[i].end === finalVertex) {
                     return this.directedEdges[i]; 
                 }
             }
@@ -165,7 +166,7 @@ class Graph {
             let edges = new Array(); 
 
             for(var i in this.directedEdges) {
-                if(this.directedEdges[i].start == vertex) {
+                if(this.directedEdges[i].start === vertex) {
                     edges.push(this.directedEdges[i]);
                 }
             }
@@ -244,8 +245,7 @@ class Graph {
                 context.moveTo(fromx, fromy); 
                 context.lineTo(tox, toy);
 
-                if(this.searchDirectedEdge(this.directedEdges[i].end, this.directedEdges[i].start) == null)
-                {
+                if(this.searchDirectedEdge(this.directedEdges[i].end, this.directedEdges[i].start) === null) {
                     context.strokeStyle = this.directedEdges[i].fill;
                     
                     context.lineTo(tox-headLen*Math.cos(angle-Math.PI/6),toy-headLen*Math.sin(angle-Math.PI/6));
@@ -265,7 +265,7 @@ class Graph {
 				yMedia *=(-1);
                 
                 // because xMedia, yMedia are distances so they need to be positive...
-                context.font = 'bold 15px Arial'; 
+                context.font = 'bold 16px Arial'; 
                 context.fillStyle = this.directedEdges[i].fillText;
                 //place the value at the center of the edge...
                 context.fillText(this.directedEdges[i].value, this.directedEdges[i].start.posX+xMedia, this.directedEdges[i].start.posY + yMedia);
@@ -297,7 +297,7 @@ class Graph {
         this.moveVertex = function (posX, posY, event) {
             let vertex = this.clickedVertex(posX, posY); 
 
-            if(vertex != null) {
+            if(vertex !== null) {
                 document.onmousemove = function(e) {
                     graph.setPosX(vertex, mouseX/scale); 
                     graph.setPosY(vertex, mouseY/scale);
@@ -363,82 +363,70 @@ class Graph {
 function onMouseDown (event)  {
     this.style.cursor = 'move' ; 
 
-    if(event.button == 0) {
-        if(option == 1) {
-            graph.addVertex(null, mouseX, mouseY)
+    if(event.button === 0) {
+        if(option === 1) {
+            graph.addVertex(null, mouseX, mouseY);
         }
-        else if(option ==2) {
-            graph.moveVertex(mouseX, mouseY, event)
-        }
-        else if (option == 3 || option == 4) {
+        else if(option === 2) {
             graph.vertexSelected = graph.clickedVertex(mouseX, mouseY); 
         }
     }
 
-    else if(event.button == 2 ) {
+    else if(event.button === 2 ) {
         let menu = document.getElementById("context_menu"); 
         graph.vertexSelected = graph.clickedVertex(mouseX, mouseY); 
 
-        if(graph.vertexSelected != null) {
+        if(graph.vertexSelected !== null) {
             // This is for when an user click on a vertex
             showMenu(event); 
             menu.onmouseout = function(e) {
                 let mouseEvent = e; 
-                let element = mouseEvent.relatedTarget || mouseEvent.toElement ; 
-                if(element.nodeName != 'LI') hideContextMenu();
+                let element = mouseEvent.relatedTarget || mouseEvent.toElement ;
             };
         }
         else {
             //This is for when a user click on an edge...
             graph.directedEdgeSelected = graph.clickedEdge(mouseX, mouseY); 
             
-            if(graph.directedEdgeSelected != null) {
+            if(graph.directedEdgeSelected !== null) {
                 showMenu(event); 
                 menu.onmouseout = function(e) {
                     var mouseEvent = e; 
-                    let element = mouseEvent.relatedTarget || mouseEvent.toElement; 
-                    if(element.nodeName != "LI") hideContextMenu()
+                    let element = mouseEvent.relatedTarget || mouseEvent.toElement;
                 }
             }
         }
     }
-    if(event.button == 0 || event.button == 1) hideContextMenu();
 }
 
 function onMouseUp(event) {
     this.style.cursor = 'default' ; 
     document.onmousemove = null; 
 
-    if(event.button == 0) {
-        if(option == 3) {
+    if(event.button === 0) {
+        if(option === 2) {
             let finalVertex = graph.clickedVertex(mouseX, mouseY); 
 
-            if(finalVertex == null) {graph.update()}  
+            if(finalVertex === null) {graph.update()}  
             else {
-                if(graph.vertexSelected != finalVertex) {
+                if(graph.vertexSelected !== finalVertex) {
 
-                   /* check if the first vertex is different from the second vertex*/  
+                /* check if the first vertex is different from the second vertex*/  
                  /* check if there is no edge between vertexSelected and finalVertex*/   
                  
-                 if(graph.searchDirectedEdge(graph.vertexSelected, finalVertex) == null) {
-
+                    if(graph.searchDirectedEdge(graph.vertexSelected, finalVertex) === null) {
                         let Existe = graph.searchDirectedEdge(finalVertex, graph.vertexSelected);
-                        if(Existe == null) {
+                        if(Existe === null) {
                             //there's no edge at all between the two points, so we need to create one...
-                            let edgeValue = prompt('Valeur de l"arrete', '2'); // for the value of the edge...
-                            if(edgeValue!= null) {
+                            let edgeValue = prompt('Valor de la linea:', '2'); // for the value of the edge...
+                            if(edgeValue !== null) {
                                 graph.addDirectedEdge(graph.vertexSelected.id, finalVertex.id, edgeValue );
                                 // Creating the edge between the two with the value given by the user...
                             }
                         }
-
                         else {
                             graph.addDirectedEdge(graph.vertexSelected.id, finalVertex.id, Existe.value)
                         }
-                    }
-
-                    else {
-                        alert("Cette arrete existe deja!"); 
                     }
 
                     graph.update(); 
@@ -446,30 +434,6 @@ function onMouseUp(event) {
             }
             graph.vertexSelected = null; 
 
-        }
-
-        else if (option == 4) {
-            let finalVertex = graph.clickedVertex(mouseX, mouseY); 
-
-            if(finalVertex == null) {
-                graph.update(); 
-            }
-
-            else {
-                if(graph.vertexSelected != finalVertex) {
-                    if(graph.searchDirectedEdge(graph.vertexSelected, finalVertex) == null) {
-                        let edgeValue = prompt('Valeur de l"arrete', '2'); 
-                        if(edgeValue != null) {
-                            graph.addDirectedEdge(graph.vertexSelected.id, finalVertex.id, edgeValue); 
-                            graph.addDirectedEdge(finalVertex.id, graph.vertexSelected.id, edgeValue); 
-                        }
-                    }
-                }else {
-                        alert("Cette arrete existe deja"); 
-                    }
-                    graph.update()
-                
-            }
         }
 
         graph.vertexSelected = null; 
@@ -488,7 +452,7 @@ function onMouseMove(event) {
         mouseY = event.layerY;
     }
 
-    if(option == 3 || option == 4) {
+    if(option === 2) {
         if(graph.vertexSelected !=null) {
             graph.clear(); 
             context.beginPath(); 
@@ -502,11 +466,67 @@ function onMouseMove(event) {
     }
 }
 
+const menuAddVertex = document.getElementById('menuAddVertex');
+const menuAddDirectedEdge = document.getElementById('menuAddDirectedEdge');
+const menuMover = document.getElementById('menuMover');
+const menuNewGraph = document.getElementById('menuNewGraph');
+const executeAlgorithmMenu= document.getElementById('executeAlgorithm');
+const resetGraph = document.getElementById('resetGraph');
+const selectAlgorithm = document.getElementById('selectAlgorithm');
+
+
+function selectItem(element, opt) {
+    menuAddVertex.classList.remove('Menu-Item-Selected'); 
+    menuAddDirectedEdge.classList.remove('Menu-Item-Selected');
+    
+    element.classList.add('Menu-Item-Selected'); 
+    option = opt ; 
+}
+
+function createGraph() {
+    graph = new Graph(); 
+    counterIdVertexes = 1; 
+}
+
+document.addEventListener('DOMContentLoaded', ()=> {
+    
+    init(); 
+    menuAddVertex.addEventListener('click', () =>selectItem(menuAddVertex, 1)); 
+    menuAddDirectedEdge.addEventListener('click', () =>selectItem(menuAddDirectedEdge, 2));
+
+
+    menuNewGraph.addEventListener('click', ()=> {
+        if(confirm('Seguro que desea crear una nueva plantilla?')) {
+            createGraph();
+            graph.update();
+        }
+    })
+
+    executeAlgorithmMenu.addEventListener('click', ()=>{
+        if(graph.empty()) {
+            alert("No hay componentes creados"); 
+            return; 
+        }
+
+        executeAlgorithm(graph, selectAlgorithm.value);
+
+    });
+
+    resetGraph.addEventListener('click', ()=> {
+        if(graph.empty()) {
+            alert('Seguro que desea crear un nuevo grafico?');
+            return; 
+        }
+
+        graph.reset();
+    });
+});
+
 function init() {
     canvas =  document.getElementById('canvas'); 
 
     if(!canvas.getContext) {
-        alert('Context canvas absent'); 
+        alert('Canvas sin contexto'); 
         return; 
     }
 
@@ -524,143 +544,5 @@ function init() {
     width = canvas.width ; 
     height = canvas.height; 
 
-    createGraph(); 
-}
-
-const menuAddVertex = document.getElementById('menuAddVertex'); 
-const menuAddUndirectedEdge = document.getElementById('menuAddUndirectedEdge'); 
-const menuAddDirectedEdge = document.getElementById('menuAddDirectedEdge'); 
-const menuMover = document.getElementById('menuMover'); 
-const menuNewGraph = document.getElementById('menuNewGraph'); 
-const edit = document.getElementById('edit'); 
-const remove = document.getElementById('remove');  
-const executeAlgorithmMenu= document.getElementById('executeAlgorithm'); 
-const resetGraph = document.getElementById('resetGraph')
-const selectAlgorithm = document.getElementById('selectAlgorithm')
-
-
-function selectItem(element, opt) {
-    menuAddVertex.classList.remove('Menu-Item-Selected'); 
-    menuAddDirectedEdge.classList.remove('Menu-Item-Selected');
-    menuAddUndirectedEdge.classList.remove('Menu-Item-Selected');
-    menuMover.classList.remove('Menu-Item-Selected');
-    
-   element.classList.add('Menu-Item-Selected'); 
-    option = opt ; 
-}
-
-function createGraph() {
-    graph = new Graph(); 
-    counterIdVertexes = 1; 
-}
-
-document.addEventListener('DOMContentLoaded', ()=> {
-    
-    init(); 
-    menuAddVertex.addEventListener('click', () =>selectItem(menuAddVertex, 1)); 
-    menuAddDirectedEdge.addEventListener('click', () =>selectItem(menuAddDirectedEdge, 3)); 
-    menuAddUndirectedEdge.addEventListener('click',()=> selectItem(menuAddUndirectedEdge, 4)); 
-    menuMover.addEventListener('click', ()=>selectItem(menuMover, 2));
-
-
-    menuNewGraph.addEventListener('click', ()=> {
-        if(confirm('Voulez-vous vraiment creer un nouveau graphe?')) {
-            createGraph(); 
-            graph.update(); 
-        }
-    })
-
-    console.log(edit)
-    console.log(remove)
-    
-    edit.addEventListener('click', ()=>{
-        hideContextMenu(); 
-
-        if(graph.vertexSelected != null) {
-            value = prompt('Valeur: ', graph.vertexSelected.value); 
-            if(value != null) {
-                graph.vertexSelected.value = value; 
-            }
-
-        }
-
-        else if(graph.directedEdgeSelected != null) {
-            value = prompt('poids de l"aret: ', graph.directedEdgeSelected.value)
-            if(value != null) {
-                graph.directedEdgeSelected.value = value; 
-                let inversedEdge = graph.searchDirectedEdge(graph.directedEdgeSelected.end, graph.directedEdgeSelected.start); 
-                if(inversedEdge != null) {
-                    inversedEdge.value = value; 
-                }
-
-            }
-        }
-
-        graph.vertexSelected = null; 
-        graph.directedEdgeSelected = null; 
-        graph.update(); 
-    })
-
-    remove.addEventListener('click', ()=>{
-        hideContextMenu(); 
-
-        if(graph.vertexSelected != null) {
-            if(confirm("Voulez-vous vraiment supprimer ce sommet")) {
-                graph.removeVertex(graph.vertexSelected.id); 
-            }
-        }
-
-        else if(graph.directedEdgeSelected != null) {
-             if(confirm('Voulez-vous vraiment supprimer cette arrete?')) {
-                graph.removeDirectedEdge(graph.directedEdgeSelected); 
-             }
-        }
-
-        graph.directedEdgeSelected = null; 
-        graph.vertexSelected = null; 
-        graph.update(); 
-
-        hideContextMenu(); 
-    })
-
-    executeAlgorithmMenu.addEventListener('click', ()=>{
-        if(graph.empty()) {
-            alert("Impossible d'executer un algorithme quand le graph est vide "); 
-            return; 
-        }
-
-        executeAlgorithm(graph, selectAlgorithm.value);
-
-    })
-
-    resetGraph.addEventListener('click', ()=> {
-        if(graph.empty()) {
-            alert('Le graphe doit etre creer avant de pouvoir etre reinitialiser!')
-            return; 
-        }
-
-        graph.reset();
-    })
-
-
-})
-
-// Block the access to context menu on the canvas when somebody right click...
-document.oncontextmenu = () => {
-    return false; 
-}
-
-
-
-
-
-const showMenu = (e) => {
-    let contextMenu = document.getElementById('context_menu'); 
-    contextMenu.style.display = "block"; 
-    contextMenu.style.top = e.clientY + 5 + "px"; 
-    contextMenu.style.left = e.clientX + 5 + "px"; 
-}
-
-const hideContextMenu = () => {
-    document.getElementById('context_menu').style.display = 'none';
+    createGraph();
 }

@@ -20,9 +20,9 @@
                         <li class="Menu-Item" id="menuAddDirectedEdge">Aniadir Linea </li>
                     </ul>
                     <br>
-                    <h3 id="h3Menu">Flujo Maximo</h3>
+                    <h3 id="h3Menu">Flujo Maximo-Fulkerson</h3>
                     <select id="selectAlgorithm">
-                        <option value="2">Flujo Maximo</option>
+                        <option value="2">Flujo Maximo-Fulkerson</option>
                     </select>
     
                     <a href="#" id="executeAlgorithm" class="Run-Item">Ejecutar</a>
@@ -36,8 +36,6 @@
                 <canvas id="canvas" width="1100" height="100%" onmousemove="onMouseMove(event)"></canvas>
             </div>
         </div>
-        <script src="../Scripts/canva.js"></script>
-        <script src="../Scripts/algorithm.js"></script>
-        <script src="../Scripts/priorityQueue.js"></script>
+        <script src="../ScriptsFlujoMaximo//canva.js"></script>
     </body>
 </html>

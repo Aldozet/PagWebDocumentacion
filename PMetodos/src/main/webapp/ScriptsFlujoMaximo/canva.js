@@ -523,7 +523,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
 });
 
 function init() {
-    alert('Hola');
     canvas =  document.getElementById('canvas'); 
 
     if(!canvas.getContext) {

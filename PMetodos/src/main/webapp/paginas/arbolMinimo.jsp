@@ -20,9 +20,9 @@
                         <li class="Menu-Item" id="menuAddDirectedEdge">Aniadir Linea </li>
                     </ul>
                     <br>
-                    <h3 id="h3Menu">MST using Kruskal</h3>
+                    <h3 id="h3Menu">Arbol Minimo-Kruskal</h3>
                     <select id="selectAlgorithm">
-                        <option value="2">MST using Kruskal</option>
+                        <option value="2">Arbol Minimo-Kruskal</option>
                     </select>
     
                     <a href="#" id="executeAlgorithm" class="Run-Item">Ejecutar</a>

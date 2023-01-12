@@ -3,6 +3,7 @@ let actualVertexId = -1;
 let actualGraph = 0; 
  
 var executeAlgorithm = function (graph, opt) {
+    alert(opt)
     switch(opt) {
         case "2" : 
             executeKruskal(graph); 

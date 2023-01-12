@@ -37,5 +37,7 @@
             </div>
         </div>
         <script src="../ScriptsFlujoMaximo//canva.js"></script>
+        <script src="../ScriptsFlujoMaximo//algoritmo.js"></script>
+        <script src="../ScriptsFlujoMaximo//priorityQueue.js.js"></script>
     </body>
 </html>

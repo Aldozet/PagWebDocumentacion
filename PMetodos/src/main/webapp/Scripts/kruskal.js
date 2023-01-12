@@ -24,15 +24,15 @@ let executeKruskal = function (graph) {
 }
 
 let updateEdges = function (result, i) {
-    actualGraph.update(); 
+    actualGraph.update();
 
-    let edge = result[i]; 
+    let edge = result[i];
     edge.start.fill = '#D14836'; 
     edge.end.fill = '#D14836'; 
     edge.fill = '#D14836'; 
     edge.fillText = 'black'; 
 
-    inversedEdge = actualGraph.searchDirectedEdge(edge.end, edge.start); 
+    inversedEdge = actualGraph.searchDirectedEdge(edge.end, edge.start);
     if(inversedEdge != null) {
         inversedEdge.start.fill = '#D14836'; 
         inversedEdge.end.fill = '#D14836';
@@ -63,8 +63,9 @@ let kruskal = function (graph) {
 
     // Adding the edges to the queue...
     for(var i = 0; i < graph.directedEdges.length; i++) {
-        queue.push(graph.directedEdges[i], graph.directedEdges[i].value); 
+        queue.push(graph.directedEdges[i], graph.directedEdges[i].value);
     }
+
 
     while(acm.length < n-1 && !queue.empty()) {
 
@@ -80,6 +81,7 @@ let kruskal = function (graph) {
 
     }
 
+
     return acm; 
 }
 
@@ -87,7 +89,7 @@ let kruskal_Find = function(idVertice, l) {
     for(var i=0; i<l.length; i++) {
         for(var j=0; j<l[i].length; j++) {
             if(l[i][j] ==idVertice)
-            return i; 
+            return i;
         }
     }
 }

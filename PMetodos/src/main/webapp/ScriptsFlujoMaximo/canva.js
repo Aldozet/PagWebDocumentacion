@@ -508,7 +508,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
             return; 
         }
 
-        executeAlgorithm(graph, selectAlgorithm.value);
+        fulkerson(graph);
 
     });
 
@@ -546,7 +546,3 @@ function init() {
 
     createGraph();
 }
-
-var executeAlgorithm = function (graph, opt) {
-    alert('Hola');
-};

@@ -37,7 +37,7 @@
             </div>
         </div>
         <script src="../Scripts/canva.js"></script>
-        <script src="../Scripts/algorithm.js"></script>
+        <script src="../Scripts/kruskal.js"></script>
         <script src="../Scripts/priorityQueue.js"></script>
     </body>
 </html>

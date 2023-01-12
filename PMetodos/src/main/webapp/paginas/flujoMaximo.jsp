@@ -5,12 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/estilo.css">
         <link rel="stylesheet" href="../css/style.css">
-        <title>Arbol Minimo</title>
+        <title>Flujo Maximo</title>
     </head>
     <body>
         <div id="main">
             <div id="navigation">
-                <h1 id="h1Title">Arbol Minimo</h1>
+                <h1 id="h1Title">Flujo Maximo</h1>
     
                 <div id="divMenu">
                    
@@ -20,9 +20,9 @@
                         <li class="Menu-Item" id="menuAddDirectedEdge">Aniadir Linea </li>
                     </ul>
                     <br>
-                    <h3 id="h3Menu">MST using Kruskal</h3>
+                    <h3 id="h3Menu">Flujo Maximo</h3>
                     <select id="selectAlgorithm">
-                        <option value="2">MST using Kruskal</option>
+                        <option value="2">Flujo Maximo</option>
                     </select>
     
                     <a href="#" id="executeAlgorithm" class="Run-Item">Ejecutar</a>
